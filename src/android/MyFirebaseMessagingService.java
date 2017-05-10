@@ -74,30 +74,45 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 	 //private void sendNotification(String title, String messageBody, Map<String, Object> data) {
 		private void sendNotification(String messageBody, String myimgurl) {
  
-
-	    Intent intent = new Intent(this, MainActivity.class);
+    Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
                 PendingIntent.FLAG_ONE_SHOT);
 
+        //이미지 온라인 링크를 가져와 비트맵으로 바꾼다.
+        try {
+            URL url = new URL(myimgurl);
+            bigPicture = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(getApplicationInfo().icon)
                 .setContentTitle("FCM Push Test")
                 .setContentText("알림탭을 아래로 천천히 드래그 하세요.")
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri)
-                //BigTextStyle
-                .setStyle(new NotificationCompat.BigTextStyle()
-                        .setBigContentTitle("FCM Push Big Text")
-                        .bigText(messageBody))
+
+//                //BigTextStyle
+//                .setStyle(new NotificationCompat.BigTextStyle()
+//                        .setBigContentTitle("FCM Push Big Text")
+//                        .bigText(messageBody))
+
+                //이미지를 보내는 스타일 사용하기
+                .setStyle(new NotificationCompat.BigPictureStyle()
+                        .bigPicture(bigPicture)
+                        .setBigContentTitle("FCM Push Big Text Title")
+                        .setSummaryText(messageBody))
+
                 .setContentIntent(pendingIntent);
 
-        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-               
+        NotificationManager notificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
-          notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
-
+			notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
+ 
 
 
 	 }
