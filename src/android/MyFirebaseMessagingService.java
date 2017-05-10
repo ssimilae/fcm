@@ -20,7 +20,7 @@ import com.google.firebase.messaging.RemoteMessage;
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     private static final String TAG = "FCMPlugin";
-
+	 Bitmap bigPicture;
     /**
      * Called when message is received.
      *
@@ -29,7 +29,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     // [START receive_message]
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
-
+f
 		//추가한것 - 메세지와 이미지를 인수로 지정
         sendNotification(remoteMessage.getData().get("message"), remoteMessage.getData().get("imgurllink"));
         //이미지 링크가 제대로 들어 있나 콘솔에 찍어 봄
