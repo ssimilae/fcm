@@ -87,12 +87,12 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 PendingIntent.FLAG_ONE_SHOT);
 
         //이미지 온라인 링크를 가져와 비트맵으로 바꾼다.
-        try {
+      //  try {
             URL url = new URL(myimgurl);
             bigPicture = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-        } catch (Exception e) {
+       // } catch (Exception e) {
             e.printStackTrace();
-        }
+       // }
 
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
