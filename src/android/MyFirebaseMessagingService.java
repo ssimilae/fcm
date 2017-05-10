@@ -75,9 +75,14 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 	 //private void sendNotification(String title, String messageBody, Map<String, Object> data) {
 		private void sendNotification(String messageBody, String myimgurl) {
  
-    Intent intent = new Intent(this, MainActivity.class);
+		//Intent intent = new Intent(this, MainActivity.class);
+        //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        
+		Intent intent = new Intent(this, FCMPluginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
+
+		
+		PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
                 PendingIntent.FLAG_ONE_SHOT);
 
         //이미지 온라인 링크를 가져와 비트맵으로 바꾼다.
