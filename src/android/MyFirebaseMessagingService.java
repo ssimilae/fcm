@@ -33,7 +33,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     public void onMessageReceived(RemoteMessage remoteMessage) {
 
 		//추가한것 - 메세지와 이미지를 인수로 지정
-        sendNotification(remoteMessage.getData().get("message"), remoteMessage.getData().get("imgurllink"));
+        sendNotification(remoteMessage.getNotification().getTitle(), remoteMessage.getData().get("imgurllink"));
         //이미지 링크가 제대로 들어 있나 콘솔에 찍어 봄
         Log.d(TAG, "imgurl: " + remoteMessage.getData().get("imgurllink"));
 
