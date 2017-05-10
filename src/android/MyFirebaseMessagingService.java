@@ -30,9 +30,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
 
-		//Ãß°¡ÇÑ°Í - ¸Ş¼¼Áö¿Í ÀÌ¹ÌÁö¸¦ ÀÎ¼ö·Î ÁöÁ¤
+		//ì¶”ê°€í•œê²ƒ - ë©”ì„¸ì§€ì™€ ì´ë¯¸ì§€ë¥¼ ì¸ìˆ˜ë¡œ ì§€ì •
         sendNotification(remoteMessage.getData().get("message"), remoteMessage.getData().get("imgurllink"));
-        //ÀÌ¹ÌÁö ¸µÅ©°¡ Á¦´ë·Î µé¾î ÀÖ³ª ÄÜ¼Ö¿¡ Âï¾î º½
+        //ì´ë¯¸ì§€ ë§í¬ê°€ ì œëŒ€ë¡œ ë“¤ì–´ ìˆë‚˜ ì½˜ì†”ì— ì°ì–´ ë´„
         Log.d(TAG, "imgurl: " + remoteMessage.getData().get("imgurllink"));
 
 
@@ -84,7 +84,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle("FCM Push Test")
-                .setContentText("¾Ë¸²ÅÇÀ» ¾Æ·¡·Î ÃµÃµÈ÷ µå·¡±× ÇÏ¼¼¿ä.")
+                .setContentText("ì•Œë¦¼íƒ­ì„ ì•„ë˜ë¡œ ì²œì²œíˆ ë“œë˜ê·¸ í•˜ì„¸ìš”.")
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri)
                 //BigTextStyle
