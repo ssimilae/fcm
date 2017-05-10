@@ -91,7 +91,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             URL url = new URL(myimgurl);
             bigPicture = BitmapFactory.decodeStream(url.openConnection().getInputStream());
        // } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
        // }
 
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
