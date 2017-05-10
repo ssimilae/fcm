@@ -11,6 +11,7 @@ import android.util.Log;
 import java.util.Map;
 import java.util.HashMap;
 import java.net.*;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
