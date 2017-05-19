@@ -67,7 +67,7 @@
 		
         <framework src="com.google.firebase:firebase-core:9.0.0" />
         <framework src="com.google.firebase:firebase-messaging:9.0.0" />
-		
+		<framework src="com.google.android.gm:9.0.0" />
 		<framework src="src/android/FCMPlugin.gradle" custom="true" type="gradleReference"/>
 			
 		<source-file src="src/android/FCMPlugin.java" target-dir="src/com/gae/scaffolder/plugin" />
