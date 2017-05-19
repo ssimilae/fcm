@@ -90,7 +90,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 .setContentTitle(title)
 				.setStyle(bigPictureStyle)
 
-                .setContentText("11111111111")
+                .setContentText(imageUri)
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri)
                 .setContentIntent(pendingIntent);
