@@ -88,6 +88,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 .setSmallIcon(getApplicationInfo().icon)
 			    .setLargeIcon(bitmap)/*Notification icon image*/
                 .setContentTitle(title)
+				.setStyle(bigPictureStyle)
                 .setContentText(messageBody)
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri)
