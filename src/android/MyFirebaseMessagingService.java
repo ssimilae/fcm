@@ -68,7 +68,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
                 PendingIntent.FLAG_ONE_SHOT);
 		
-		String imageUri = data.get("imgurl");
+		String imageUri = (String)data.get("imgurl");
 
 		bitmap = getBitmapfromUrl(imageUri);
 
