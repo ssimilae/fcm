@@ -13,7 +13,7 @@ import java.util.HashMap;
 import android.graphics.Bitmap;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-
+import java.net.*;
 /**
  * Created by Felipe Echanique on 08/06/2016.
  */
@@ -89,8 +89,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
     }
 
-
-	  * */
+ 
     public Bitmap getBitmapfromUrl(String imageUrl) {
         try {
             URL url = new URL(imageUrl);
