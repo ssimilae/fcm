@@ -39,15 +39,9 @@ public class FCMPluginActivity extends Activity {
             }
         }
 		
-
-		
-		myFireBaseService.sendNotification((String)data.get("title"), (String)data.get("body"), data);
-
-		FCMPlugin.sendPushPayload(data);
-
-        finish();
-		
-		
+ 
+		FCMPlugin.sendPushPayload(data);  
+        finish(); 
 
         forceMainActivityReload();
     }
