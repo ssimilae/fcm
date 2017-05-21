@@ -36,10 +36,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         // message, here is where that should be initiated. See sendNotification method below.
         Log.d(TAG, "==> MyFirebaseMessagingService onMessageReceived");
 		
-		if( remoteMessage.getNotification() != null){
-			Log.d(TAG, "\tNotification Title: " + remoteMessage.getNotification().getTitle());
-			Log.d(TAG, "\tNotification Message: " + remoteMessage.getNotification().getBody());
-		}
+		//if( remoteMessage.getNotification() != null){
+			//Log.d(TAG, "\tNotification Title: " + remoteMessage.getNotification().getTitle());
+			//Log.d(TAG, "\tNotification Message: " + remoteMessage.getNotification().getBody());
+		//}
 		
 		Map<String, Object> data = new HashMap<String, Object>();
 		data.put("wasTapped", false);
@@ -51,7 +51,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 		
 		Log.d(TAG, "\tNotification Data: " + data.toString());
         //FCMPlugin.sendPushPayload( data );
-        sendNotification(remoteMessage.getNotification().getTitle(), remoteMessage.getNotification().getBody(), data);
+        //sendNotification(remoteMessage.getNotification().getTitle(), remoteMessage.getNotification().getBody(), data);
+        sendNotification((String)data.get("title"), (String)data.get("body"), data);
     }
     // [END receive_message]
 
