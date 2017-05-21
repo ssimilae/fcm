@@ -93,7 +93,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
  
 				notificationBuilder = new NotificationCompat.Builder(this)
 				.setSmallIcon(getApplicationInfo().icon)
-				.setLargeIcon(getApplicationInfo().icon)/*Notification icon image*/
+				//.setLargeIcon(getApplicationInfo().icon)/*Notification icon image*/
 				.setContentTitle(title)
 				.setStyle(bigPictureStyle) 
 
