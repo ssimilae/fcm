@@ -16,7 +16,7 @@ import java.util.HashMap;
 
 public class FCMPluginActivity extends Activity {
     private static String TAG = "FCMPlugin";
-	MyFirebaseMessagingService myFireBaseService = new MyFirebaseMessagingService();
+	//MyFirebaseMessagingService myFireBaseService = new MyFirebaseMessagingService();
     /*
      * this activity will be started if the user touches a notification that we own. 
      * We send it's data off to the push plugin for processing.
