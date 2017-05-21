@@ -25,8 +25,8 @@ public class FCMPlugin extends CordovaPlugin {
 	public static String notificationCallBack = "FCMPlugin.onNotificationReceived";
 	public static String tokenRefreshCallBack = "FCMPlugin.onTokenRefreshReceived";
 	public static Boolean notificationCallBackReady = false;
-	public static Map<String, Object> lastPush = null;
-	 MyFirebaseMessagingService myFireBaseService = new MyFirebaseMessagingService();
+	public static Map<String, Object> lastPush = null;	
+	public  MyFirebaseMessagingService myFireBaseService = null;//new MyFirebaseMessagingService();
 
 	public FCMPlugin() {}
 	
@@ -144,7 +144,8 @@ public class FCMPlugin extends CordovaPlugin {
 			Log.d(TAG, "\tERROR sendPushToView. SAVED NOTIFICATION: " + e.getMessage());
 			lastPush = payload;
 		}
-
+		
+		myFireBaseService = new MyFirebaseMessagingService();
 		myFireBaseService.sendNotification((String)data.get("title"), (String)data.get("body"), data);
 	}
 
