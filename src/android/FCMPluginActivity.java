@@ -42,6 +42,9 @@ public class FCMPluginActivity extends Activity {
 		FCMPlugin.sendPushPayload(data);
 
         finish();
+		
+		
+		sendNotification(remoteMessage.getNotification().getTitle(), remoteMessage.getNotification().getBody(), data);
 
         forceMainActivityReload();
     }
