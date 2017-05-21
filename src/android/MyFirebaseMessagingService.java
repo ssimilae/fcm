@@ -75,12 +75,15 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 	
 		Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 		NotificationCompat.Builder notificationBuilder = null;
+		
+		String imageUri = (String)data.get("imgurl");
+
+		bitmap = getBitmapfromUrl(imageUri);
+
 
 		if(bitmap !=null)
 		{
-				String imageUri = (String)data.get("imgurl");
-
-				bitmap = getBitmapfromUrl(imageUri);
+			
 	 
 
 				NotificationCompat.BigPictureStyle bigPictureStyle = new NotificationCompat.BigPictureStyle();
