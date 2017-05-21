@@ -90,6 +90,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 				bigPictureStyle.setBigContentTitle(title);
 				bigPictureStyle.setSummaryText(messageBody);
 				bigPictureStyle.bigPicture(bitmap);
+				bigPictureStyle.bigText(messageBody);
 
 				notificationBuilder = new NotificationCompat.Builder(this)
 				.setSmallIcon(getApplicationInfo().icon)
