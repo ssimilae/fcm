@@ -70,31 +70,45 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
                 PendingIntent.FLAG_ONE_SHOT);
 		
-		String imageUri = (String)data.get("imgurl");
-
-		bitmap = getBitmapfromUrl(imageUri);
-
-
-        Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-
-
-		NotificationCompat.BigPictureStyle bigPictureStyle = new NotificationCompat.BigPictureStyle();
-        bigPictureStyle.setBigContentTitle(title);
-        //bigPictureStyle.setSummaryText(Html.fromHtml(message).toString());
-        bigPictureStyle.bigPicture(bitmap);
 
 
 
-        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
-                .setSmallIcon(getApplicationInfo().icon)
-			    .setLargeIcon(bitmap)/*Notification icon image*/
-                .setContentTitle(title)
-				.setStyle(bigPictureStyle)
+		if(bitmap !=null)
+		{
+			String imageUri = (String)data.get("imgurl");
 
-                .setContentText(imageUri)
-                .setAutoCancel(true)
-                .setSound(defaultSoundUri)
-                .setContentIntent(pendingIntent);
+			bitmap = getBitmapfromUrl(imageUri);
+
+
+			Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+
+
+			NotificationCompat.BigPictureStyle bigPictureStyle = new NotificationCompat.BigPictureStyle();
+			bigPictureStyle.setBigContentTitle(title);
+			//bigPictureStyle.setSummaryText(Html.fromHtml(message).toString());
+			bigPictureStyle.bigPicture(bitmap);
+
+			NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
+					.setSmallIcon(getApplicationInfo().icon)
+					.setLargeIcon(bitmap)/*Notification icon image*/
+					.setContentTitle(title)
+					.setStyle(bigPictureStyle) 
+
+					.setContentText(title)
+					.setAutoCancel(true)
+					.setSound(defaultSoundUri)
+					.setContentIntent(pendingIntent);
+		} 
+		else 
+		{
+					NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
+					.setSmallIcon(getApplicationInfo().icon) 
+					.setContentTitle(title) 
+					.setContentText(title)
+					.setAutoCancel(true)
+					.setSound(defaultSoundUri)
+					.setContentIntent(pendingIntent);
+		}
 
         NotificationManager notificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
