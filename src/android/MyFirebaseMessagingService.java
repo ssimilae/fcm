@@ -104,9 +104,16 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 		} 
 		else 
 		{
+				NotificationCompat.BigTextStyle bigTextStyle = new NotificationCompat.BigTextStyle(); 
+				bigTextStyle.setSummaryText(title); 
+				bigTextStyle.setBigContentTitle(title); 
+				bigTextStyle.bigText(messageBody);
+ 
+
 				notificationBuilder = new NotificationCompat.Builder(this)
 				.setSmallIcon(getApplicationInfo().icon) 
 				.setContentTitle(title) 
+				.setStyle(bigTextStyle)  
 				.setContentText(messageBody)
 				.setAutoCancel(true)
 				.setSound(defaultSoundUri)
