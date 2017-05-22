@@ -97,7 +97,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 				.setContentTitle(title)
 				.setStyle(bigPictureStyle) 
 
-				.setContentText(title)
+				.setContentText(messageBody)
 				.setAutoCancel(true)
 				.setSound(defaultSoundUri)
 				.setContentIntent(pendingIntent);
@@ -107,7 +107,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 				notificationBuilder = new NotificationCompat.Builder(this)
 				.setSmallIcon(getApplicationInfo().icon) 
 				.setContentTitle(title) 
-				.setContentText(title)
+				.setContentText(messageBody)
 				.setAutoCancel(true)
 				.setSound(defaultSoundUri)
 				.setContentIntent(pendingIntent);
