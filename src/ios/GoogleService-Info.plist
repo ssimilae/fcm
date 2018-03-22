@@ -2,5 +2,39 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>203294992129-0v0l31fu3nfs17qrd5jp4na8c2eun6nu.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.203294992129-0v0l31fu3nfs17qrd5jp4na8c2eun6nu</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCkU9WaeV47_TK911Nnmy7qx-UAM94uRBg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>203294992129</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.golfmanager.ios</string>
+	<key>PROJECT_ID</key>
+	<string>golfmanager-162404</string>
+	<key>STORAGE_BUCKET</key>
+	<string>golfmanager-162404.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:203294992129:ios:ed44ac9a5930b46c</string>
+	<key>DATABASE_URL</key>
+	<string>https://golfmanager-162404.firebaseio.com</string>
 </dict>
 </plist>
